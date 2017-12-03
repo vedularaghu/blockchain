@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Birth Certificate</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <form class="form-horizontal" action='/birth' method="POST">
+      <fieldset>
+        <div id="legend">
+          <legend class="">Register birth Certificate</legend>
+        </div>
+        <div class="control-group">
+
+          <label class="control-label" for="name">Full Name</label>
+          <div class="controls">
+            <input type="text" id="username" name="namebirth" placeholder="Full Name" class="input-xlarge form-control">
+            <p class="help-block">Enter your name as mentioned in the Birth Certificate</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <!-- E-mail -->
+          <label class="control-label" for="email">E-mail</label>
+          <div class="controls">
+            <input type="text" id="email" name="email" placeholder="" class="input-xlarge form-control">
+            <p class="help-block">Please provide your E-mail for contact purpose</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+
+          <label class="control-label" for="Birth Date">Birth Date</label>
+          <div class="controls">
+            <input type="date" id="date" name="date" placeholder="Birth date" class="input-xlarge form-control">
+            <p class="help-block">Enter the birth date as mentioned in the Birth Certificate</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+            <button class="btn btn-success">Register</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </div>
+</body>
+
+</html>
