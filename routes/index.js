@@ -1,6 +1,7 @@
 var express = require('express');
 var session = require('express-session');
 const bcrypt = require('bcrypt');
+const sha256 = require('sha256');
 const aadhar_st = require('../models/aadhar');
 const birth_st = require('../models/birth');
 
@@ -53,14 +54,22 @@ router.post('/aadhar', function(req, res, next) {
   var an = req.body.aadharnum;
   var tohash = name+an;
   console.log(tohash);
-  bcrypt.hash(tohash, saltRounds, function(err, hash) {
+  bcrypt.hash(tohash,saltRounds, function(err, hash) {
     res.render('result');
     console.log(hash);
     const A = new aadhar_st({
       Name: name,
       aadhar_number: an,
-      unique_hash: tohash,
-    }).save();
+      unique_hash: hash,
+    });
+    A.save().then(function (err, aadhar_st) {
+      if(err){
+        console.log(err);
+        res.render(err);
+      }else{
+        res.redirect('/aadhar?msg=Successfully%20saved')
+      }
+    })
     aadhar_list.push({name:name,aadhar_hash: hash});
 });
 
@@ -76,8 +85,16 @@ router.post('/birth', function(req, res, next) {
     const B = new aadhar_st({
       Name: name,
       Birthdate: birthdate,
-      unique_hash: tohash,
-    }).save();
+      unique_hash: hash,
+    });
+    B.save().then(function (err, aadhar_st) {
+      if(err){
+        console.log(err);
+        res.send(err);
+      }else{
+        res.redirect('/birth?msg=Successfully%20Saved');
+      }
+    })
     birth_list.push({name:name, birth_hash:hash})
 });
 
