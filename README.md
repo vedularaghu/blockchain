@@ -1,5 +1,5 @@
 # Blockchain
-A Nodejs based login page is made and then the details of the certificates are registered. At the back-end, the unique details are hashed and pushed to blockchain.
+A Nodejs based certificate registration and authentication application. 
 Custom blockchain made using python is used to validate the hash values and authenticate the certificate details. 
 ## Run
 Clone the repo
