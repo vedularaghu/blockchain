@@ -15,7 +15,7 @@
     "express": "~4.0.0",
     "express-session": "^1.15.6",
     "mongodb": "^2.2.33",
-    "mongoose": "^4.13.6",
+    "mongoose": "^4.13.21",
     "morgan": "~1.0.0",
     "nodemon": "^1.12.1",
     "sha256": "^0.2.0",
